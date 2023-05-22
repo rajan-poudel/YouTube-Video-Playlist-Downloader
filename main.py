@@ -40,7 +40,7 @@ def is_valid_youtube_playlist(url):
 
 def audio(url):
   try:
-   destination ="static/Downloads/Audio"
+   destination ="static"
    yt = YouTube(url)
    video = yt.streams.filter(only_audio=True).first()
    out_file = video.download(output_path = destination)
@@ -52,7 +52,7 @@ def audio(url):
 
 def video(url):
   try:
-    destination ="static/Downloads/Video"
+    destination ="static"
     yt = YouTube(url)
     video = yt.streams.get_highest_resolution()
     out_file = video.download(output_path = destination)
